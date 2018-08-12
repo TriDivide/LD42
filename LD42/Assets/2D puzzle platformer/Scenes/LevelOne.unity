@@ -167,6 +167,11 @@ Prefab:
       propertyPath: SuccessPanel
       value: 
       objectReference: {fileID: 1718752257}
+    - target: {fileID: 82991270256261082, guid: 0a35d8ef3c2c56142ab9653e9ce4b8ce,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: aede7b12e59bc2e4589c4a2edb7bc27c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a35d8ef3c2c56142ab9653e9ce4b8ce, type: 2}
   m_IsPrefabAsset: 0

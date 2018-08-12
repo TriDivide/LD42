@@ -11,10 +11,15 @@ public class PlayerMovement : MonoBehaviour {
     public GameObject DeathPanel;
     public GameObject SuccessPanel;
 
+    public AudioSource sfx;
 
-
+    public AudioClip Bong;
+    public AudioClip OhNo;
+    public AudioClip OhYea;
 	// Use this for initialization
 	void Start () {
+
+        sfx = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -44,6 +49,9 @@ public class PlayerMovement : MonoBehaviour {
             Destroy(gameObject);
             DeathPanel.SetActive(true);
             Time.timeScale = 0f;
+            sfx.clip = OhNo;
+                
+            sfx.Play();
 
 
 
