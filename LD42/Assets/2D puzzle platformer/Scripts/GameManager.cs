@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
     public static bool StartMoving = false;
 
     public static float power = 0f;
-    private Vector3 target;
+
 	// Use this for initialization
 	void Start () {
         PowerButton.SetActive(false);
@@ -33,9 +33,9 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Danger1.transform.localScale = Vector3.Lerp(Danger1.transform.localScale, new Vector3(100,100), Time.deltaTime * 0.005f);
-        Danger2.transform.localScale = Vector3.Lerp(Danger2.transform.localScale, new Vector3(100, 100), Time.deltaTime * 0.005f);
-        FinishArea.transform.localScale = Vector3.Lerp(FinishArea.transform.localScale, target, Time.deltaTime * 0.1f);
+        Danger1.transform.localScale = Vector3.Lerp(Danger1.transform.localScale, new Vector3(100,100), Time.deltaTime * 0.0005f);
+        Danger2.transform.localScale = Vector3.Lerp(Danger2.transform.localScale, new Vector3(100, 100), Time.deltaTime * 0.0005f);
+        FinishArea.transform.localScale = Vector3.Lerp(FinishArea.transform.localScale, new Vector3(), Time.deltaTime * 0.1f);
 
 
     }
@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour {
                 MovementSpeed += 1;
                 PowerIndicator.text = MovementSpeed.ToString();
             }
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(1f);
 
             
         }
