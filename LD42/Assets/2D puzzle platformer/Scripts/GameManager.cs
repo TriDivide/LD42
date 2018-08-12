@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
     public static bool IsRotating = true;
     private bool IncrementPower = false;
     public static bool StartMoving = false;
-    public static float MovementSpeed = 0f;
+    public static float MovementSpeed = 1f;
 
     public static bool IsPaused = false;
 
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour {
         StartMoving = false;
         IsRotating = true;
         IncrementPower = false;
-        MovementSpeed = 0f;
+        MovementSpeed = 1f;
         IsPaused = false;
         PowerButton.SetActive(false);
         StartCoroutine(IncreasePower());
