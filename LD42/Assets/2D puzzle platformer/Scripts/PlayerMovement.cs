@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour {
 
     public float RotationSpeed = 5f;
 
+    public Sprite self;
+
 
 	// Use this for initialization
 	void Start () {
@@ -19,8 +21,17 @@ public class PlayerMovement : MonoBehaviour {
             transform.Rotate(Vector3.forward * -RotationSpeed);
         }
 		if (GameManager.StartMoving) {
-            gameObject.GetComponent<Rigidbody>().velocity = transform.forward * GameManager.MovementSpeed;
+            gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * GameManager.MovementSpeed, ForceMode2D.Impulse);
 
+        }
+
+
+    }
+
+    void OnCollisionEnter2D(Collision2D col) {
+        Debug.Log("collided");
+        if (col.gameObject.tag == "Danger") {
+            Destroy(gameObject);
         }
     }
 }
