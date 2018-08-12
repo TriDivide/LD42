@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour {
     public float RotationSpeed = 1f;
 
 
+    public GameObject DeathPanel;
+    public GameObject SuccessPanel;
+
 
 
 	// Use this for initialization
@@ -39,10 +42,17 @@ public class PlayerMovement : MonoBehaviour {
         Debug.Log("collided");
         if (col.gameObject.tag == "Danger") {
             Destroy(gameObject);
+            DeathPanel.SetActive(true);
+            Time.timeScale = 0f;
+
+
+
         }
         if (col.gameObject.tag == "Finish") {
-            Destroy(gameObject);
             Debug.Log("You win");
+            SuccessPanel.SetActive(true);
+            Time.timeScale = 0f;
+
         }
     }
 }
