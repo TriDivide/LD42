@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 
-    public float RotationSpeed = 3f;
+    public float RotationSpeed = 1f;
 
 
 
@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (GameManager.IsRotating) {
+        if (GameManager.IsRotating && !GameManager.IsPaused) {
             transform.Rotate(Vector3.forward * -RotationSpeed);
         }
 
