@@ -44,7 +44,9 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Danger1.transform.localScale = Vector3.Lerp(Danger1.transform.localScale, new Vector3(100,100), Time.deltaTime * 0.001f);
-        Danger2.transform.localScale = Vector3.Lerp(Danger2.transform.localScale, new Vector3(100, 100), Time.deltaTime * 0.001f);
+        if (Danger2 != null) {
+            Danger2.transform.localScale = Vector3.Lerp(Danger2.transform.localScale, new Vector3(100, 100), Time.deltaTime * 0.001f);
+        }
         FinishArea.transform.localScale = Vector3.Lerp(FinishArea.transform.localScale, new Vector3(), Time.deltaTime * 0.1f);
 
 
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void SetPower() {
+        Debug.Log("set power");
         StartMoving = true;
         IncrementPower = false;
         PowerButton.SetActive(false);
